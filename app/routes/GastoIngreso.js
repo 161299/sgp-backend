@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("./../utils/utils");
+const GastoIngreso_1 = require("./../controllers/GastoIngreso");
+const express_1 = require("express");
+const GastoIngreso_2 = require("../controllers/GastoIngreso");
+exports.gastoingreso_router = express_1.Router();
+// gastoingreso_router.post('/gastoingreso', postGastoIngreso);
+exports.gastoingreso_router.get('/gastoingreso/:id_gastoingreso', GastoIngreso_2.getGastoIngresoByPk);
+exports.gastoingreso_router.post('/transaccion/gasto-ingreso', utils_1.wachiman, GastoIngreso_1.postTransaccion);
+exports.gastoingreso_router.put('/gastoingreso/:id_gastoingreso', GastoIngreso_2.updateGastoIngresoByPk);
